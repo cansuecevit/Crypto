@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="selectedCrypto"
+            type="com.cansuecevit.crypto.model.Crypto" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.CountryFragment">
+        <ImageView
+            android:id="@+id/crypto_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:padding="7dp"
+            android:downloadUrl="@{selectedCrypto.logo_url}">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="4">
+            <TextView
+                android:id="@+id/cryptoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{selectedCrypto.name}"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:padding="7dp" />
+            <TextView
+                android:id="@+id/cryptoCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{selectedCrypto.currency}"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:padding="7dp" />
+            <TextView
+                android:id="@+id/cryptoPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{selectedCrypto.price}"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:padding="7dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
